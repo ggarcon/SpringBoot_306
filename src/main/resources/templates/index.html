@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="actor : ${director}">
+    <h2 th:text="${director.name}"></h2>
+    <h6 th:inline="text">specializing in [[${director.genre}]]</h6>
+    <ul>
+        <th:block th:each="movie : ${director.movie}">
+            <li th:inline="text"><b>[[${movie.title}]]</b> releeased in [[${movie.year}]].</li>
+        </th:block>
+    </ul>
+</div>
+</body>
+</html>
